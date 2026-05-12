@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fußball Packliste</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    select {
+        font-size: 18px;
+        padding: 8px;
+        margin-bottom: 25px;
+    }
+
+    .item {
+        font-size: 20px;
+        margin: 12px 0;
+    }
+
+    input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+        vertical-align: middle;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<h1>⚽ Fußball Packliste (10–12 Jahre)</h1>
+
+<label for="modus"><strong>Bereich auswählen:</strong></label><br>
+<select id="modus" onchange="zeigeListe()">
+    <option value="training">Training</option>
+    <option value="spiel">Spiel</option>
+</select>
+
+<div id="training">
+
+    <h2>Training</h2>
+
+    <div class="item"><label><input type="checkbox">Trainingsshirt</label></div>
+    <div class="item"><label><input type="checkbox">Trainingshose / kurze Hose</label></div>
+    <div class="item"><label><input type="checkbox">Fußballsocken (Stutzen)</label></div>
+    <div class="item"><label><input type="checkbox">Fußballschuhe</label></div>
+    <div class="item"><label><input type="checkbox">Schienbeinschoner</label></div>
+    <div class="item"><label><input type="checkbox">Trinkflasche</label></div>
+    <div class="item"><label><input type="checkbox">Trainingsjacke / Pulli</label></div>
+    <div class="item"><label><input type="checkbox">Wechselshirt</label></div>
+    <div class="item"><label><input type="checkbox">Badeschlappen</label></div>
+    <div class="item"><label><input type="checkbox">Handtuch / Duschzeug</label></div>
+
+</div>
+
+<div id="spiel" class="hidden">
+
+    <h2>Spiel</h2>
+
+    <div class="item"><label><input type="checkbox">Trikot</label></div>
+    <div class="item"><label><input type="checkbox">Spielhose</label></div>
+    <div class="item"><label><input type="checkbox">Stutzen</label></div>
+    <div class="item"><label><input type="checkbox">Fußballschuhe</label></div>
+    <div class="item"><label><input type="checkbox">Schienbeinschoner</label></div>
+    <div class="item"><label><input type="checkbox">Trinkflasche</label></div>
+    <div class="item"><label><input type="checkbox">Ersatzkleidung</label></div>
+    <div class="item"><label><input type="checkbox">Aufwärmjacke / Trainingsanzug</label></div>
+    <div class="item"><label><input type="checkbox">Badeschlappen</label></div>
+    <div class="item"><label><input type="checkbox">Handtuch / Duschzeug</label></div>
+
+</div>
+
+<script>
+function zeigeListe() {
+    const modus = document.getElementById("modus").value;
+
+    document.getElementById("training").classList.add("hidden");
+    document.getElementById("spiel").classList.add("hidden");
+
+    document.getElementById(modus).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
